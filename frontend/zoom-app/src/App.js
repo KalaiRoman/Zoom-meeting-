@@ -1,14 +1,47 @@
-import React from 'react'
-import {Route,Routes} from 'react-router-dom';
-import Home from './Home';
-import JoinMetting from './JoinMetting';
+import React, { useEffect, useState } from 'react'
+import Routings from './Routing/Routings';
+import './App.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { DropdownShow } from './redux/reducers/Login_Reducer';
+import Header from './components/header/Header';
 function App() {
+
+//   const [show,setShow]=useState(false);
+//   const dispatch=useDispatch();
+
+//   const state=useSelector((state)=>state?.login?.dropdownshow);
+
+
+//   const handleClick=()=>{
+//     if(state)
+//     {
+//       setShow((pre)=>!pre)
+//     dispatch(DropdownShow(show));
+
+//     }
+    
+//   }
+
+//   useEffect(()=>{
+// window.addEventListener("click",handleClick)
+
+// return()=>{
+//   window.removeEventListener("click",handleClick)
+// }
+
+//   },[show,state])
   return (
     <div>
-<Routes>
-  <Route path="/" element={<Home/>} exact={true}/>
-  <Route path="/join/:roomID" element={<JoinMetting/>} />
-  </Routes>    
+      <section>
+        <Header/>
+      </section>
+      <main>
+      <Routings/>   
+
+      </main>
+      <section>
+
+      </section>
   </div>
   )
 }

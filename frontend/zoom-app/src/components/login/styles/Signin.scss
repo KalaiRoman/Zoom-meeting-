@@ -1,0 +1,256 @@
+@use "../../../sass/abstract/" as *;
+
+.singin-main-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    // background-color: #e75b5e;
+    .inside-section-main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .left-section-signin {
+            width: 50%;
+            background-color: #6b5efc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            @include xsBreakPoint {
+                width: 100%;
+            }
+            @include smBreakPoint {
+                width: 100%;
+            }
+
+            @include lgBreakPoint {
+                // width: 100%;
+            }
+            @include xlBreakPoint {
+                width: 100%;
+            }
+            .logo2 {
+                width: 100%;
+                height: 400px;
+                object-fit: contain;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0%;
+                top: 30%;
+                transform: translateX(-50%, -50%);
+            }
+        }
+        .right-section-signin {
+            width: 50%;
+            position: relative;
+            background-color: white;
+            @include xsBreakPoint {
+                width: 100%;
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+            @include smBreakPoint {
+                width: 100%;
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+            @include mdBreakPoint {
+                width: 100%;
+            }
+            @include lgBreakPoint {
+                width: 100%;
+                overflow-y: auto;
+                overflow: hidden;
+            }
+            @include xlBreakPoint {
+                width: 100%;
+                overflow-y: auto;
+                overflow: hidden;
+            }
+            .circleone-image {
+                position: absolute;
+                right: 0;
+                width: 20%;
+            }
+            .circletwo-image {
+                position: absolute;
+                bottom: 0%;
+                left: 3%;
+            }
+            .inside-right-section-singnin {
+                width: 100%;
+                // border: 2px solid red;
+                height: 100%;
+                margin: auto;
+                padding-left: 10%;
+                padding-right: 10%;
+
+                .first-section-right {
+                    width: 100%;
+                    height: 20%;
+
+                    background-size: contain;
+                    bottom: 0;
+                    text-align: center;
+                    @include xsBreakPoint {
+                        bottom: 0 !important;
+                        height: 20%;
+                    }
+
+                    .qutations-section-first {
+                        padding-left: 3%;
+                        @include xsBreakPoint {
+                            padding-left: 7%;
+                        }
+                        @include smBreakPoint {
+                            padding-left: 5%;
+                        }
+                        @include mdBreakPoint {
+                            padding-left: 7%;
+                        }
+                        @include lgBreakPoint {
+                            padding-left: 6%;
+                        }
+                        @include xlBreakPoint {
+                            padding-left: 6%;
+                        }
+                        .and-love-by {
+                            position: absolute;
+                            font-weight: 500;
+                            color: #092133;
+                            font-size: 1.3rem !important;
+                            bottom: 0;
+                        }
+                        .customer {
+                            font-weight: 500;
+                            color: #e75b5e;
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+                .second-section-right {
+                    // border: 2px solid blueviolet;
+                    height: 65%;
+                    @include smBreakPoint {
+                        padding-top: 2%;
+                    }
+                    .signin-section {
+                        color: #1e1e24;
+                        font-weight: 700;
+                    }
+                    .reset-button {
+                        width: 25% !important;
+                        background-color: #e75b5e;
+                        @include xsBreakPoint {
+                            width: 45% !important;
+                        }
+                        @include smBreakPoint {
+                            width: 35% !important;
+                        }
+                        @include mdBreakPoint {
+                            width: 45% !important;
+                        }
+                    }
+                    .other-account {
+                        @include xsBreakPoint {
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+                            gap: 10px;
+                        }
+                        @include mdBreakPoint {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            text-align: center;
+                            gap: 10px;
+                            margin: 0 auto;
+                        }
+                    }
+                    .dont-haves {
+                        @include xsBreakPoint {
+                            text-align: center;
+                        }
+                        @include smBreakPoint {
+                            padding-top: 2%;
+                        }
+                        @include mdBreakPoint {
+                            text-align: center;
+                        }
+                    }
+                    .forget-password-section {
+                        display: flex;
+                        justify-content: space-between;
+                        @include smBreakPoint {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                        @include mdBreakPoint {
+                            display: flex;
+                            align-items: center;
+                            // text-align: center;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+                .third-section-right {
+                    // border: 2px solid blueviolet;
+                    height: 15%;
+                }
+            }
+        }
+    }
+}
+.singin-main-section.inside-section-main::-webkit-scrollbar {
+    @include lgBreakPoint {
+        display: none !important;
+        // border: 2px solid blue !important;
+    }
+    @include xlBreakPoint {
+        display: none !important;
+    }
+}
+
+.womenlogsize {
+    width: 230px;
+    object-fit: contain;
+}
+.termsofuse {
+    cursor: pointer;
+    padding-top: 2px;
+    color: #e95a5a !important;
+}
+.termsofuse:hover {
+    text-decoration: dashed !important;
+    cursor: pointer;
+}
+
+.logo1 {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    aspect-ratio: 5/1;
+}
+
+.password-section-icons {
+    // border: 2px solid red;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    .passsword-svg {
+        position: absolute;
+        right: 2%;
+        top: 7%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}

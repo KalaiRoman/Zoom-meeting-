@@ -1,0 +1,112 @@
+@use "../abstract" as *;
+
+// back button start section
+
+.back-btn {
+    width: 100%;
+    color: #e95a5a !important;
+    background-color: white !important;
+    border: 1px solid #e95a5a !important;
+    cursor: pointer;
+    @include xsBreakPoint {
+        width: 100% !important;
+    }
+    @include smBreakPoint {
+        width: 100% !important;
+    }
+    @include mdBreakPoint {
+        width: 100% !important;
+    }
+    @include lgBreakPoint {
+        width: 100% !important;
+    }
+    @include xlBreakPoint {
+        width: 100% !important;
+    }
+}
+.back-btn:hover {
+    background-color: #e95a5a !important;
+    cursor: pointer;
+    color: white !important;
+}
+
+// back button end section
+
+// submit button start section
+
+.submit-btn {
+    background-color: #6b5efc !important;
+    cursor: pointer;
+    color: white !important;
+    width: 30%;
+    all: unset;
+    padding: 10px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    @include xsBreakPoint {
+        width: 100% !important;
+    }
+    @include smBreakPoint {
+        width: 40% !important;
+    }
+    @include mdBreakPoint {
+        width: 100% !important;
+    }
+    @include lgBreakPoint {
+        width: 50% !important;
+    }
+    @include xlBreakPoint {
+        width: 50% !important;
+    }
+}
+.submit-btn:hover {
+    background-color: #6b5efc !important;
+    cursor: pointer;
+    color: white !important;
+}
+
+// submit button end section
+
+// button gap start section
+
+.button-gap-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+// button gap end section
+
+// next button
+
+.next-btn {
+    background-color: #e95a5a !important ;
+    cursor: pointer;
+    color: white !important;
+}
+.next-btn:hover {
+    background-color: white !important;
+    cursor: pointer;
+    color: #e95a5a !important;
+}
+
+// upload button start
+
+.upload-btn {
+    background-color: #e95a5a !important ;
+    cursor: pointer;
+    color: white !important;
+}
+.upload-btn:hover {
+    background-color: white !important;
+    cursor: pointer;
+    color: #e95a5a !important;
+}
+
+// upload button end
+
+// active icon in svg start
+
+.width {
+    width: 20px;
+}
+// active icon in svg end
