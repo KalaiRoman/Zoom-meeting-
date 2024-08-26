@@ -1,4 +1,4 @@
-import { CreateMeeting, Home, JoinMeeting, Login, PageNotFound } from "../pages/Pages";
+import { ConfirmMeetingJoin, CreateMeeting, CreateUsers, Home, JoinMeeting, Login, PageNotFound } from "../pages/Pages";
 
 export const AllRoutingPath=[
     {
@@ -39,6 +39,24 @@ export const AllRoutingPath=[
     },
     {
         id:5,
+        name:"Confirm Meeting Join",
+        inactiveLogo:"",
+        activeLogo:"",
+        component:<ConfirmMeetingJoin/>,
+        path:"/confirm-meeting",
+        exact:false
+    },
+    {
+        id:6,
+        name:"Create User",
+        inactiveLogo:"",
+        activeLogo:"",
+        component:<CreateUsers/>,
+        path:"/create-users",
+        exact:false
+    },
+    {
+        id:7,
         name:"Page Not Found",
         inactiveLogo:"",
         activeLogo:"",

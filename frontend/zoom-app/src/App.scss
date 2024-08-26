@@ -15,6 +15,17 @@
     color: white;
 }
 
+.cancel-btns {
+    cursor: pointer;
+    color: white !important;
+    width: 30%;
+    all: unset;
+    padding: 10px 50px;
+    border-radius: 20px;
+    background-color: #ff4e88;
+
+    cursor: pointer;
+}
 .checkbox-wrapper-7 .tgl {
     display: none;
 }

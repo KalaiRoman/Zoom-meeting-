@@ -25,6 +25,9 @@ function Home() {
   return (
     <div>
      
+     <section>
+        <Header/>
+      </section>
       <section>
         <main className='main-section-body'>
 <div className='row gap-5 w-100 mx-auto'>

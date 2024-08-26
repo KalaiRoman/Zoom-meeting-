@@ -30,10 +30,19 @@ function App() {
 // }
 
 //   },[show,state])
+
+const pathNames=window.location.pathname;
+
+useEffect(()=>{
+
+},[pathNames])
   return (
     <div>
+
       <section>
-        <Header/>
+        {/* {pathNames=="/"?<></>:<>
+          <Header/>
+        </>} */}
       </section>
       <main>
       <Routings/>   

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Header.scss';
 import zoomlogo from '../../assets/images/logo.png'
 import { useDispatch, useSelector } from 'react-redux';
-import { DropdownShow } from '../../redux/reducers/Login_Reducer';
+import { DropdownShow, LogoutUser } from '../../redux/reducers/Login_Reducer';
 function Header() {
     const [show,setShow]=useState(false);
     const dispatch=useDispatch();
@@ -16,7 +16,12 @@ function Header() {
 
     },[show]);
 
-    const profileList=["Profile","Meetings"]
+    const profileList=["Profile","Meetings"];
+
+    const clerLocal=()=>{
+        dispatch(LogoutUser());;
+        window.location.assign("/")
+    }
   return (
     <div className='main-header'>
         <div>
@@ -41,6 +46,9 @@ function Header() {
     )
 })}
 </div>
+<div>
+<button className="submit-btn" onClick={clerLocal}>Logout</button>
+    </div>
             </div>:<></>}
             </div>
 

@@ -6,11 +6,11 @@ function Routings() {
   return (
    <>
    <Routes>
-   {AllRoutingPath.slice(0,1)?.map((item,index)=>(
+   {AllRoutingPath.slice(0,2)?.map((item,index)=>(
     <Route element={item?.component} exact={item?.exact} path={item?.path} key={index}></Route>
    ))}
    <Route element={<ProtectedRouter/>}>
-   {AllRoutingPath.slice(1)?.map((item,index)=>(
+   {AllRoutingPath.slice(2)?.map((item,index)=>(
     <Route element={item?.component} exact={item?.exact} path={item?.path} key={index}></Route>
    ))}
    </Route>
