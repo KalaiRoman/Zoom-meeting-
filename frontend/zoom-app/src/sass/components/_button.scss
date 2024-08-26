@@ -38,26 +38,10 @@
     background-color: #6b5efc !important;
     cursor: pointer;
     color: white !important;
-    width: 30%;
     all: unset;
     padding: 10px 50px;
     border-radius: 20px;
     cursor: pointer;
-    @include xsBreakPoint {
-        width: 100% !important;
-    }
-    @include smBreakPoint {
-        width: 40% !important;
-    }
-    @include mdBreakPoint {
-        width: 100% !important;
-    }
-    @include lgBreakPoint {
-        width: 50% !important;
-    }
-    @include xlBreakPoint {
-        width: 50% !important;
-    }
 }
 .submit-btn:hover {
     background-color: #6b5efc !important;

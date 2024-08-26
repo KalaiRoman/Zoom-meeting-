@@ -12,6 +12,8 @@ import { LoginUserAction } from "../../redux/reducers/Login_Reducer";
 import PostMethod from "../../api/PostMethod";
 import { Login_services } from "../../services/Auth_services";
 const Login = memo(() => {
+
+  const PathName=localStorage.getItem("path_zoom_meeting");
   let history = useNavigate();
   const dispatch=useDispatch();
   const loginReducer=useSelector((state)=>state?.login);
@@ -48,9 +50,18 @@ const Login = memo(() => {
       try {
         const {data,token}=await Login_services(datas);
         if (data || token) {
-      dispatch(LoginUserAction(token));
-          ToastSuccess("User Login Successfully!!");
-          history("/home"); 
+          if(PathName)
+          {
+            dispatch(LoginUserAction(token));
+            ToastSuccess("User Login Successfully!!");
+            history(JSON.parse(PathName)); 
+          }
+          else{
+            dispatch(LoginUserAction(token));
+            ToastSuccess("User Login Successfully!!");
+            history("/home"); 
+          }
+    
         }
       } catch (err) {
         ToastError("An error occurred during login.");

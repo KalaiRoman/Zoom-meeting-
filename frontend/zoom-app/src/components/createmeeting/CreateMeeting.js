@@ -127,7 +127,13 @@ if(data)
   }
   useEffect(()=>{
     GetMethod();
-  },[selectAll])
+    setMeeting((pre)=>({
+      ...pre,
+      Users:inviteuser?.length
+    })
+     
+    )
+  },[selectAll,inviteuser])
 
   const JoinMeeting=(params,name)=>{
     history(`/confirm-meeting?roomID=${params}?roomName=${name}`)
@@ -276,15 +282,15 @@ const createUsers=()=>{
         <tr>
           <th>S.No</th>
           <th>Meeting Name</th>
-          <th>Day</th>
+          {/* <th>Day</th> */}
           <th>Meeting Date</th>
           <th>Users</th>
-          <th>Status</th>
           <th>Duration</th>
           <th>Actions</th>
           <th>Meeting Cancel</th>
           <th>Send</th>
-          <th>Join</th>
+          <th>Status</th>
+
         </tr>
       </thead>
       <tbody>
@@ -294,15 +300,15 @@ const createUsers=()=>{
             <tr key={index}>
           <td>{index+1}</td>
           <td>{item?.name}</td>
-          <td>{moment(item?.MeetingDate).format('dddd')}</td>
+          {/* <td>{moment(item?.MeetingDate).format('dddd')}</td> */}
           <td>{moment(item?.MeetingDate).format('LLLL')}</td>
           <td>{item?.Users}</td>
 
-          <td>
+          {/* <td>
 {moment(item?.MeetingDate).isSame(moment(), 'day') ? "Join Now" : (
   moment(item?.MeetingDate).isBefore(moment(), 'day') ? "Ended" : "Upcoming"
 )}
-          </td>
+          </td> */}
           <td>{item?.Duration} Mins</td>
           <td><div className='d-flex gap-4'>
             <div onClick={()=>edit_Meeting_Data(item?._id)}><i className="fa-regular fa-pen-to-square"></i></div>
@@ -312,7 +318,7 @@ const createUsers=()=>{
 
             </div></td>
           <td>
-          <div className="checkbox-wrapper-7">
+          <div className="checkbox-wrapper-7 d-flex align-items-center justify-content-center">
   <input className="tgl tgl-ios" id="cb2-7" type="checkbox" onChange={()=>handleStatusChange(item?._id)} checked={item?.status?true:false}/>
   <label className="tgl-btn" for="cb2-7"/>
 </div>
@@ -320,7 +326,15 @@ const createUsers=()=>{
           <td>
           <button className='cancel-btn' onClick={()=>sendMail(item?._id)}>Send</button>
           </td>
-          <td><button className='submit-btn' onClick={()=>JoinMeeting(item?.MeetingId,item?.name)}>Join</button></td>
+          <td>
+        <div className='d-flex align-items-center justify-content-center'>
+        {moment(item?.MeetingDate).isSame(moment(), 'day') ? <>
+            <button className='submit-btn' onClick={()=>JoinMeeting(item?.MeetingId,item?.name)}>Join</button>
+          </> : (
+  moment(item?.MeetingDate).isBefore(moment(), 'day') ? "Ended" : "Upcoming"
+)}
+        </div>
+          </td>
         </tr>
           )
         })}
@@ -396,15 +410,14 @@ const createUsers=()=>{
            name="Users"
            value={Users}
            onChange={handleChange}
+           disabled
         />
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
               </Col>
             </Row>
-
             <Row>
-
               <div>
                 <input type="checkbox" onChange={handleChangeSelectall} checked={allusers?.length===inviteuser?.length?true:false}/>
                 <label>Select All</label>

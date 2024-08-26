@@ -97,3 +97,23 @@ export const GetZoom_services_delete_user=async(paramsid)=>{
         }
     }
 }
+
+
+export const GetZoom_services_track_user=async(data)=>{
+    try {
+        const response=await InstanceUrl.post(`/zoom/meeting/track-mail/`,data);
+        if(response)
+        {
+            return{
+                data:response?.data?.data,
+                error:""
+            }
+        }
+     
+    } catch (error) {
+        return{
+            response:"",
+            error:"No Data Found"
+        }
+    }
+}

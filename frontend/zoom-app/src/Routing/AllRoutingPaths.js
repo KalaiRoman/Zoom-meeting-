@@ -10,6 +10,18 @@ export const AllRoutingPath=[
         path:"/",
         exact:true
     },
+    
+    {
+        id:5,
+        name:"Confirm Meeting Join",
+        inactiveLogo:"",
+        activeLogo:"",
+        component:<ConfirmMeetingJoin/>,
+        path:"/confirm-meeting",
+        exact:false
+    },
+
+
     {
         id:2,
         name:"Join Meeting",
@@ -37,15 +49,7 @@ export const AllRoutingPath=[
         path:"/create-meeting",
         exact:false
     },
-    {
-        id:5,
-        name:"Confirm Meeting Join",
-        inactiveLogo:"",
-        activeLogo:"",
-        component:<ConfirmMeetingJoin/>,
-        path:"/confirm-meeting",
-        exact:false
-    },
+    
     {
         id:6,
         name:"Create User",
