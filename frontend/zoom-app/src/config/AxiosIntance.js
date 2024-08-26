@@ -2,7 +2,7 @@ import axios from "axios";
 const token=localStorage.getItem("zoom_token");
 axios.interceptors.request.use(function (config) {
   if (config.url.search("/zoom/meeting/track-mail/")) {
-    config.url=process.env.REACT_APP_LOCAL_URL_BACKEND+config.url;
+    config.url=process.env.REACT_APP_LIVE_URL_BACKEND+config.url;
     config.headers = {
       ...config.headers,
       "Content-Type": "application/json",
@@ -12,7 +12,7 @@ axios.interceptors.request.use(function (config) {
     return config;
   }
   else{
-    config.url=process.env.REACT_APP_LOCAL_URL_BACKEND+config.url;
+    config.url=process.env.REACT_APP_LIVE_URL_BACKEND+config.url;
     config.headers = {
       ...config.headers,
       "Content-Type": "application/json",
